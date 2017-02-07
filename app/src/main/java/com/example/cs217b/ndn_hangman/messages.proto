@@ -1,0 +1,18 @@
+package com.example.cs217b.ndn_hangman;
+
+option java_outer_classname = "MessageBuffer";
+
+message Messages {
+    required string name = 1;
+    enum MessageType {
+        GUESS = 0;
+        EVAL = 1;
+        JOIN = 2;
+        LEAVE = 3;
+        HELLO = 4;
+        OTHER = 5;
+    }
+    required MessageType type = 2 [default = GUESS];
+    optional string word = 3;
+    required int32 timestamp = 4;
+}
